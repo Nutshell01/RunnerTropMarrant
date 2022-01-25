@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class PlayerAnimations : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Animator animator = null;
 
-    // Update is called once per frame
-    void Update()
+    private static int zProperty = Animator.StringToHash("z");
+
+    private void LateUpdate()
     {
         
     }

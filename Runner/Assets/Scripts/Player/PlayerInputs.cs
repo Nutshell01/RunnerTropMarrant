@@ -4,15 +4,49 @@ using UnityEngine;
 
 public class PlayerInputs : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
-        
+        OnJump();
+        OnSlide();
+        GoRight();
+        GoLeft();
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnJump()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Z))
+        {
+
+        }
     }
+
+    public void OnSlide()
+    {
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+
+        }
+
+    }
+
+    public void GoRight()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+
+        }
+
+    }
+
+    public void GoLeft()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+
+        }
+
+    }
+
+
 }
