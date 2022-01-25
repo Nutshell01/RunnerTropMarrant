@@ -4,15 +4,39 @@ using UnityEngine;
 
 public class PlayerMovements : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Transform[] transforms;
+    private bool _right;
+
+    public float jumpForce;
+    Rigidbody rb;
+    //GroundCheck groundCheck;
+
+    private void Start()
     {
+        rb = GetComponent<Rigidbody>();
+        //groundCheck = GetComponentInChildren<GroundCheck>();
+    }
+    private void Update()
+    {
+        Movements();
+   
+    }
+
+    public void Movements()
+    {
+        if()
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Jump()
     {
-        
+        Vector3 jumpforce = new Vector3(0, jumpForce, 0);
+
+
+    }
+
+    public void SetRightBool(bool boolToSet)
+    {
+        _right = boolToSet;
     }
 }

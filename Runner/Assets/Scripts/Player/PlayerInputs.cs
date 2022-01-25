@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerInputs : MonoBehaviour
 {
+    [SerializeField] private PlayerMovements playerMovements = null;
+
+    
     private void Update()
     {
         OnJump();
@@ -17,7 +20,7 @@ public class PlayerInputs : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Z))
         {
-
+            playerMovements.Jump();
         }
     }
 
@@ -32,16 +35,14 @@ public class PlayerInputs : MonoBehaviour
 
     public void GoRight()
     {
-        if (Input.GetMouseButtonDown(1))
-        {
-
-        }
+        
+        playerMovements.SetRightBool(Input.GetButtonDown("Right"));
 
     }
 
     public void GoLeft()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetButtonDown("Left"))
         {
 
         }
