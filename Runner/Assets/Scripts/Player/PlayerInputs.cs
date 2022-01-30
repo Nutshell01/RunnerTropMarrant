@@ -21,6 +21,7 @@ public class PlayerInputs : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Z))
         {
             playerMovements.Jump();
+            Debug.Log("ok");
         }
     }
 
@@ -36,7 +37,7 @@ public class PlayerInputs : MonoBehaviour
     public void GoRight()
     {
         
-        playerMovements.SetRightBool(Input.GetButtonDown("Right"));
+        //playerMovements.SetRightBool(Input.GetButtonDown("Right"));
 
     }
 

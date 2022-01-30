@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class PlayerAnimations : MonoBehaviour
 {
+    private int jump = Animator.StringToHash("jump");
+    private int slide = Animator.StringToHash("slide");
+
     [SerializeField] private Animator animator = null;
 
-    private static int zProperty = Animator.StringToHash("z");
 
-    [SerializeField] private PlayerAnimations playerAnimations = null;
-    [SerializeField] private PlayerMovements playerMovements = null;
-
-    private void Update()
+    private void Start()
     {
-        animator.SetTrigger(zProperty);
+        OnRun();
     }
+    private void OnRun()
+    {
+        animator.SetFloat("z", 1.0f);
+    }
+
+    public void OnJump()
+    {
+        animator.SetTrigger(jump);
+        OnRun();
+    }
+
+    public void OnSlide()
+    {
+        animator.SetTrigger(slide);
+    }
+
+
 }
