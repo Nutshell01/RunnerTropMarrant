@@ -312,8 +312,6 @@ MonoBehaviour:
   _prefabsToInstantiate:
   - {fileID: 8301998767046130947, guid: 2dd2d891c53b7c64997a7eab08c17104, type: 3}
   - {fileID: 679380638076524016, guid: cd1ae48988395b54c99d18aacf714f56, type: 3}
-  - {fileID: 679380638076524016, guid: cd1ae48988395b54c99d18aacf714f56, type: 3}
-  - {fileID: 679380638076524016, guid: cd1ae48988395b54c99d18aacf714f56, type: 3}
 --- !u!114 &730777608
 MonoBehaviour:
   m_ObjectHideFlags: 0
