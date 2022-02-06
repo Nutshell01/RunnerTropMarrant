@@ -21,7 +21,6 @@ public class PlayerInputs : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Z))
         {
             playerMovements.Jump();
-            Debug.Log("ok");
         }
     }
 
@@ -29,15 +28,19 @@ public class PlayerInputs : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.S))
         {
-
+            playerMovements.Slide();
         }
 
     }
 
     public void GoRight()
     {
-        
+
         //playerMovements.SetRightBool(Input.GetButtonDown("Right"));
+        if (Input.GetButtonDown("Right"))
+        {
+            playerMovements.moveToRight();
+        }
 
     }
 
@@ -45,7 +48,7 @@ public class PlayerInputs : MonoBehaviour
     {
         if (Input.GetButtonDown("Left"))
         {
-
+            playerMovements.moveToLeft();
         }
 
     }

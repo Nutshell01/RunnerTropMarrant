@@ -6,6 +6,8 @@ public class PlayerAnimations : MonoBehaviour
 {
     private int jump = Animator.StringToHash("jump");
     private int slide = Animator.StringToHash("slide");
+    private int left = Animator.StringToHash("left");
+    private int right = Animator.StringToHash("right");
 
     [SerializeField] private Animator animator = null;
 
@@ -28,6 +30,16 @@ public class PlayerAnimations : MonoBehaviour
     public void OnSlide()
     {
         animator.SetTrigger(slide);
+    }
+
+    public void OnLeft()
+    {
+        animator.SetTrigger(left);
+    }
+
+    public void OnRight()
+    {
+        animator.SetTrigger(right);
     }
 
 
