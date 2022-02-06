@@ -40,7 +40,6 @@ public class PlayerMovements : MonoBehaviour
         float HorizontalMovement = Mathf.MoveTowards(0, transforms[currentTransform].position.x - rb.position.x, 0.5f);
         velocity.x = HorizontalMovement / Time.deltaTime;
 
-        rb.velocity = Vector3.zero;
         rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
 
     }
