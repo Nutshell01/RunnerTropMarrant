@@ -7,6 +7,7 @@ public class ObjectCreator : MonoBehaviour
     //[SerializeField] Transform _positionToGenerate;
     [SerializeField] PullingManager _pullingManager;
     [SerializeField] GameObject _objectGenerated;
+    [SerializeField] GameManager _gameManager;
 
     [SerializeField] float _timerDuration;
     private float _generationCooldown;
@@ -37,6 +38,7 @@ public class ObjectCreator : MonoBehaviour
         GameObject objectGenerated = GameObject.Instantiate(_objectToGenerate, GetPositionToGenerate(), Quaternion.identity);
 
         _objectGenerated = objectGenerated;
+        _gameManager.GetWorldObject();
     }
 
     Vector3 GetPositionToGenerate()
