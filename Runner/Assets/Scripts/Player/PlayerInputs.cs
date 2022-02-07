@@ -37,7 +37,7 @@ public class PlayerInputs : MonoBehaviour
     {
 
         //playerMovements.SetRightBool(Input.GetButtonDown("Right"));
-        if (Input.GetButtonDown("Right"))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             playerMovements.moveToRight();
         }
@@ -46,7 +46,7 @@ public class PlayerInputs : MonoBehaviour
 
     public void GoLeft()
     {
-        if (Input.GetButtonDown("Left"))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             playerMovements.moveToLeft();
         }
