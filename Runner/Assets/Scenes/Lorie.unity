@@ -147,7 +147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 156283837}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.119198315, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 268055663068229167}
@@ -259,7 +259,7 @@ GameObject:
   m_Component:
   - component: {fileID: 451858181}
   m_Layer: 0
-  m_Name: GameObject (2)
+  m_Name: Gauche
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -453,7 +453,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1311712730}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: Droite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -602,6 +602,8 @@ MonoBehaviour:
   actionDuration: 0.15
   actionTimeToRemain: 0
   isGrounded: 1
+  normalCollider: {fileID: 1906105106}
+  slideCollider: {fileID: 919132147871583612}
 --- !u!114 &1906105104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -655,7 +657,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1941795448}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Milieu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -869,6 +871,7 @@ GameObject:
   - component: {fileID: 1906105102}
   - component: {fileID: 1906105103}
   - component: {fileID: 1906105104}
+  - component: {fileID: 919132147871583612}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -876,6 +879,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!136 &919132147871583612
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147871583611}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.4427873, z: 0}
 --- !u!4 &1031632036156190108
 Transform:
   m_ObjectHideFlags: 0

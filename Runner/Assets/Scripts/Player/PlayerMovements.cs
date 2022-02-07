@@ -20,6 +20,9 @@ public class PlayerMovements : MonoBehaviour
 
     private int currentTransform = 1;
 
+    public Collider normalCollider;
+    public Collider slideCollider;
+
      private void Start()
      {
          rb = GetComponent<Rigidbody>();
@@ -33,7 +36,18 @@ public class PlayerMovements : MonoBehaviour
 
         isGrounded = true;
 
-     }
+        if(actionTimeToRemain <= 0)
+        {
+            Run();
+        }
+
+    }
+
+    public void Run()
+    {
+        slideCollider.enabled = false;
+        normalCollider.enabled = true;
+    }
 
     private void FixedUpdate()
     {
@@ -62,6 +76,8 @@ public class PlayerMovements : MonoBehaviour
         if (actionTimeToRemain <= 0)
         {
             playerAnimations.OnSlide();
+            slideCollider.enabled = true;
+            normalCollider.enabled = false;
             actionTimeToRemain = actionDuration;
         }
 
