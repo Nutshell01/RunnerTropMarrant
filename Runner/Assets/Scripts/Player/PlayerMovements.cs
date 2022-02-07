@@ -20,6 +20,9 @@ public class PlayerMovements : MonoBehaviour
 
     private int currentTransform = 1;
 
+    public Collider normalCollider;
+    public Collider slideCollider;
+
      private void Start()
      {
          rb = GetComponent<Rigidbody>();
@@ -33,7 +36,18 @@ public class PlayerMovements : MonoBehaviour
 
         isGrounded = true;
 
-     }
+        if(actionTimeToRemain <= 0)
+        {
+            Run();
+        }
+
+    }
+
+    public void Run()
+    {
+        slideCollider.enabled = false;
+        normalCollider.enabled = true;
+    }
 
     private void FixedUpdate()
     {
@@ -62,6 +76,8 @@ public class PlayerMovements : MonoBehaviour
         if (actionTimeToRemain <= 0)
         {
             playerAnimations.OnSlide();
+            slideCollider.enabled = true;
+            normalCollider.enabled = false;
             actionTimeToRemain = actionDuration;
         }
 
@@ -71,7 +87,6 @@ public class PlayerMovements : MonoBehaviour
     {
         if(actionTimeToRemain <= 0  && moveToLeft())
         {
-            playerAnimations.OnLeft();
             actionTimeToRemain = actionDuration;
         }
     }
@@ -80,7 +95,6 @@ public class PlayerMovements : MonoBehaviour
     {
         if (actionTimeToRemain <= 0 && moveToRight())
         {
-            playerAnimations.OnRight();
             actionTimeToRemain = actionDuration;
         }
     }
@@ -91,6 +105,7 @@ public class PlayerMovements : MonoBehaviour
         {
             return false;
         }
+        playerAnimations.OnLeft();
 
         currentTransform -= 1;
         return true;
@@ -102,7 +117,7 @@ public class PlayerMovements : MonoBehaviour
         {
             return false;
         }
-
+        playerAnimations.OnRight();
         currentTransform += 1;
         return true;
     }
