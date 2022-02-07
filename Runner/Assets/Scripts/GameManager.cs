@@ -63,4 +63,13 @@ public class GameManager : MonoBehaviour
         _worldSpeed += _accelerationFactor * Time.deltaTime;
     }
 
+    public int GetCollectibleNumber()
+    {
+        return _collectibleNumber;
+    }
+    public void SetCollectibleNumber()
+    {
+        _collectibleNumber ++;
+    }
+
 }
