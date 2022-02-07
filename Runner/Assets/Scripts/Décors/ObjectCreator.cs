@@ -4,25 +4,19 @@ using UnityEngine;
 
 public class ObjectCreator : MonoBehaviour
 {
-    //[SerializeField] Transform _positionToGenerate;
-    [SerializeField] PullingManager _pullingManager;
+
     [SerializeField] GameObject _objectGenerated;
     [SerializeField] GameManager _gameManager;
-
     [SerializeField] float _timerDuration;
+    [SerializeField] GameObject[] _prefabsToInstantiate;
     private float _generationCooldown;
-    // Start is called before the first frame update
+    
 
     private void Awake()
     {
         _objectGenerated = GameObject.FindGameObjectWithTag("Generated");
     }
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+ 
     void Update()
     {
         _generationCooldown -= Time.deltaTime;
@@ -31,8 +25,8 @@ public class ObjectCreator : MonoBehaviour
     void Generate()
     {
         GetPositionToGenerate();
-        int RandomInt = Random.Range(0, _pullingManager._prefabsToInstantiate.Length);
-        GameObject _objectToGenerate = _pullingManager._prefabsToInstantiate[RandomInt];
+        int RandomInt = Random.Range(0, _prefabsToInstantiate.Length);
+        GameObject _objectToGenerate = _prefabsToInstantiate[RandomInt];
 
 
         GameObject objectGenerated = GameObject.Instantiate(_objectToGenerate, GetPositionToGenerate(), Quaternion.identity);
