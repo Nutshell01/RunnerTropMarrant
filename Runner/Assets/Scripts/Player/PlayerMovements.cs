@@ -71,7 +71,6 @@ public class PlayerMovements : MonoBehaviour
     {
         if(actionTimeToRemain <= 0  && moveToLeft())
         {
-            playerAnimations.OnLeft();
             actionTimeToRemain = actionDuration;
         }
     }
@@ -80,7 +79,6 @@ public class PlayerMovements : MonoBehaviour
     {
         if (actionTimeToRemain <= 0 && moveToRight())
         {
-            playerAnimations.OnRight();
             actionTimeToRemain = actionDuration;
         }
     }
@@ -91,6 +89,7 @@ public class PlayerMovements : MonoBehaviour
         {
             return false;
         }
+        playerAnimations.OnLeft();
 
         currentTransform -= 1;
         return true;
@@ -102,7 +101,7 @@ public class PlayerMovements : MonoBehaviour
         {
             return false;
         }
-
+        playerAnimations.OnRight();
         currentTransform += 1;
         return true;
     }
