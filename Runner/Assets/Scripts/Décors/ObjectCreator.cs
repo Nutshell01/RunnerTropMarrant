@@ -24,9 +24,9 @@ public class ObjectCreator : MonoBehaviour
         Timer();
         IncreaseTimerDuration();
 
-        if(_timerDuration <= 0.35f)
+        if(_timerDuration <= 0.5f)
         {
-            _timerDuration = 0.35f;
+            _timerDuration = 0.5f;
         }
     }
     void Generate()
@@ -44,8 +44,8 @@ public class ObjectCreator : MonoBehaviour
 
     Vector3 GetPositionToGenerate()
     {
-        Vector3 positionToGenerate = _objectGenerated.transform.GetChild(0).gameObject.transform.GetChild(0).transform.position;
-        Debug.Log(_objectGenerated.transform.GetChild(0).gameObject.transform.GetChild(0).name);
+        Vector3 positionToGenerate = _objectGenerated.transform.GetChild(0).transform.position;
+       
         return positionToGenerate;
     }
 
