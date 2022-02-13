@@ -12,6 +12,7 @@ public class ObjectCreator : MonoBehaviour
     private float _generationCooldown;
     [SerializeField] float _generationSpeedFactor;
     
+    
 
     private void Awake()
     {
@@ -22,12 +23,9 @@ public class ObjectCreator : MonoBehaviour
     {
         _generationCooldown -= Time.deltaTime;
         Timer();
-        IncreaseTimerDuration();
+        //IncreaseTimerDuration();
 
-        if(_timerDuration <= 0.5f)
-        {
-            _timerDuration = 0.5f;
-        }
+       
     }
     void Generate()
     {
@@ -58,8 +56,8 @@ public class ObjectCreator : MonoBehaviour
         }
     }
 
-    private void IncreaseTimerDuration()
-    {
-        _timerDuration -= Time.deltaTime * _generationSpeedFactor;
-    }
+    // private void IncreaseTimerDuration()
+    // {
+    //     _timerDuration -= Time.deltaTime * _generationSpeedFactor;
+    // }
 }

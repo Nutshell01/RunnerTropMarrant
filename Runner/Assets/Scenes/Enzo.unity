@@ -8663,12 +8663,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectGenerated: {fileID: 1638699785276438935}
   _gameManager: {fileID: 730777609}
-  _timerDuration: 2
+  _timerDuration: 3
   _prefabsToInstantiate:
   - {fileID: 1638699785696844671, guid: fddbdfbf050cc4d4c97c21d3b2efe960, type: 3}
   - {fileID: 17518530826422038, guid: 8decdb4339d075344aea15aea187aea6, type: 3}
   - {fileID: 5210754038661635858, guid: 020988e0894fdb647ac01ad6189e01e0, type: 3}
-  _generationSpeedFactor: 0.08
+  _generationSpeedFactor: 0
 --- !u!114 &730777609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8683,6 +8683,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _worldSpeed: 3
   _accelerationFactor: 0.5
+  _accelerationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 3
+      inSlope: 2.6118138
+      outSlope: 2.6118138
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.07915586
+    - serializedVersion: 3
+      time: 16.401047
+      value: 14.772522
+      inSlope: 0.11913222
+      outSlope: 0.11913222
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.17625149
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!43 &732577352
 Mesh:
   m_ObjectHideFlags: 0
