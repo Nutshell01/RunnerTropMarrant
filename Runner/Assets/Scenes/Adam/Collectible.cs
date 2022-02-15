@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
-    GameManager _gameManager;
+    public GameManager _gameManager;
     public int _coinValue;
 
     private void Start()
@@ -14,9 +14,10 @@ public class Collectible : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.layer == 6)
+        if(other.gameObject.layer == 10)
         {
             _gameManager.SetCollectibleNumber(_coinValue);
+            other.GetComponent<Animator>().SetTrigger("Collected");
         }
     }
 }
