@@ -1014,7 +1014,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1251384765829009300}
   - component: {fileID: 2129880009192992619}
-  - component: {fileID: 5357963922919516790}
+  - component: {fileID: 448629379144274973}
   m_Layer: 0
   m_Name: ColliderTriggers (1)
   m_TagString: Untagged
@@ -1049,7 +1049,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 0.045146525, z: 0.100000024}
   m_Center: {x: 0, y: 0.9662838, z: -0.25}
---- !u!114 &5357963922919516790
+--- !u!114 &448629379144274973
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

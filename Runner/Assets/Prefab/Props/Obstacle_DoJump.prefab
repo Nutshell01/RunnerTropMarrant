@@ -648,7 +648,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: aca1fc9b3f191f04eb620e785eb1df48, type: 2}
+  - {fileID: 2100000, guid: 492f5d55a0532b8488bebaf7640c6437, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -961,7 +961,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: aca1fc9b3f191f04eb620e785eb1df48, type: 2}
+  - {fileID: 2100000, guid: 492f5d55a0532b8488bebaf7640c6437, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1015,7 +1015,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7054411910521306021}
   - component: {fileID: 2292589523236745208}
-  - component: {fileID: 8378273238325135031}
+  - component: {fileID: 5662614023065668150}
   m_Layer: 0
   m_Name: ColliderTriggers
   m_TagString: Untagged
@@ -1050,7 +1050,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 0.9, z: 0.1}
   m_Center: {x: 0, y: 0.5, z: -0.25}
---- !u!114 &8378273238325135031
+--- !u!114 &5662614023065668150
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1331,7 +1331,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: aca1fc9b3f191f04eb620e785eb1df48, type: 2}
+  - {fileID: 2100000, guid: 492f5d55a0532b8488bebaf7640c6437, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
