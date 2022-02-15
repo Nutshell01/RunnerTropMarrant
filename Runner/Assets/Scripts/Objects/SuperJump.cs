@@ -6,8 +6,6 @@ public class SuperJump : MonoBehaviour
 {
     [SerializeField] private PlayerMovements playermovements;
 
-    public float actionDuration = 1f;
-
     public float SuperJumpDuration = 0f;
     public Collider Collider;
 
@@ -17,21 +15,13 @@ public class SuperJump : MonoBehaviour
         {
             Collider.enabled = false;
 
-            if (actionDuration !>= 0)
-            {
                 playermovements.jumpForce = 10f;
                 SuperJumpDuration = 15f;
-            }
         }
     }
 
     private void Update()
     {
-        if(actionDuration !=0)
-        {
-            actionDuration = actionDuration - 0.1f * Time.deltaTime;
-        }
-
         if (SuperJumpDuration != 0)
         {
             SuperJumpDuration = SuperJumpDuration - 1f * Time.deltaTime;
