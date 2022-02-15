@@ -6,6 +6,8 @@ public class PlayerMovements : MonoBehaviour
 {
     [SerializeField] private PlayerAnimations playerAnimations;
 
+    public float Gravity;
+
      public Transform[] transforms;
      //private bool _right;
 
@@ -29,7 +31,10 @@ public class PlayerMovements : MonoBehaviour
      }
      private void Update()
      {
-        if(actionTimeToRemain != 0)
+        Vector3 gravity = new Vector3(0, Gravity, 0);
+        rb.AddForce(gravity, ForceMode.Force);
+
+        if (actionTimeToRemain != 0)
         {
             actionTimeToRemain = actionTimeToRemain - 0.2f *Time.deltaTime;
         }
