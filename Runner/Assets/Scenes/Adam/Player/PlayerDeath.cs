@@ -7,14 +7,21 @@ public class PlayerDeath : MonoBehaviour
 {
     public UnityEvent _playerDeath;
 
-    AudioSource _jump = null;
+    [SerializeField] GameManager _gameManager;
+    [SerializeField] GameObject _player;
+    [SerializeField] GameObject _GameOverUi;
+    [SerializeField] ObjectCreator _objectCreator;
+    [SerializeField] ParticleSystem _playerDeathParticles;
+    [SerializeField] PlayerInputs _playerInputs;
 
-    // Dans la void du jump
-
-    void JumpSound()
+    public void OnDeath()
     {
-        _jump.pitch = Random.Range(0.9f, 1.1f);
-        _jump.Play();
+        _playerDeathParticles.Play();
+        _playerInputs.enabled = false;
+        _gameManager._isDead = true;
+        _GameOverUi.SetActive(true);
+        _objectCreator.EndTimer();
+        _player.SetActive(false);
     }
 
 }

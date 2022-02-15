@@ -5,28 +5,18 @@ using UnityEngine;
 public class ObstacleImpact : MonoBehaviour
 {
     ParticleSystem _playerDeathParticles;
-    GameObject _player;
+
+    PlayerDeath _playerScript;
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.layer == 6)
+        if (other.gameObject.layer == 6)
         {
             _playerDeathParticles = other.GetComponentInChildren<ParticleSystem>();
-            _player = other.gameObject;
-
-            StartCoroutine(PlayerDeath());
+            _playerScript = other.GetComponent<PlayerDeath>();
+            _playerScript._playerDeath.Invoke();
         }
     }
 
-    IEnumerator PlayerDeath()
-    {
-        _playerDeathParticles.Play();
 
-        yield return new WaitForSeconds(0.1f);
-
-        for(int i = 0; i < _player.GetComponentsInChildren<SkinnedMeshRenderer>().Length; i++)
-        {
-            _player.GetComponentsInChildren<SkinnedMeshRenderer>()[i].enabled = false;
-        }
-    }
 }

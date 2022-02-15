@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] AnimationCurve _accelerationCurve;
     [SerializeField] TextMeshProUGUI _coinText;
     private GameObject[] _worldObject;
+    public bool _isDead = false;
     private float _distance;
     private int _collectibleNumber;
 
@@ -31,8 +32,14 @@ public class GameManager : MonoBehaviour
     {
         IncreaseScore();
         _coinText.text = _collectibleNumber.ToString();
-       _worldSpeed = _accelerationCurve.Evaluate(Time.time);
-      
+        if (_isDead == false)
+        {
+            _worldSpeed = _accelerationCurve.Evaluate(Time.time);
+        }
+        else
+            _worldSpeed = 0;
+
+
     }
 
     #endregion
@@ -70,5 +77,7 @@ public class GameManager : MonoBehaviour
     {
         _collectibleNumber += coinValue;
     }
+
+
 
 }
