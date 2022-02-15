@@ -6,28 +6,39 @@ public class MagnetCoins : MonoBehaviour
 {
     public float MagnetDuration = 0f;
     public Collider Collider;
+    public bool attraction = false;
+    public Rigidbody playerRb;
 
-   /* private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 10)
+        if (other.gameObject.layer == 6)
         {
             Collider.enabled = false;
-            SuperJumpDuration = 15f;
+            attraction = true;
+            MagnetDuration = 15f;
+
+            if(other.gameObject.layer == 10 )
+            {
+           
+            }
+
+            //if(Physics.SphereCast)
+            {
+
+            }
         }
     }
 
     private void Update()
     {
-        if (SuperJumpDuration != 0)
+        if (MagnetDuration != 0)
         {
-            SuperJumpDuration = SuperJumpDuration - 1f * Time.deltaTime;
+            MagnetDuration = MagnetDuration - 1f * Time.deltaTime;
         }
 
-        if (SuperJumpDuration <= 0)
+        if (MagnetDuration <= 0)
         {
-            playermovements.jumpForce = 5f;
+            attraction = false;
         }
-
-
-    }*/
+    }
 }
