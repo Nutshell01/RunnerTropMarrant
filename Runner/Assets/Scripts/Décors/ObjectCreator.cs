@@ -12,6 +12,7 @@ public class ObjectCreator : MonoBehaviour
     private float _generationCooldown;
     [SerializeField] float _generationSpeedFactor;
     
+    
 
     private void Awake()
     {
@@ -22,12 +23,9 @@ public class ObjectCreator : MonoBehaviour
     {
         _generationCooldown -= Time.deltaTime;
         Timer();
-        IncreaseTimerDuration();
+        //IncreaseTimerDuration();
 
-        if(_timerDuration <= 0.35f)
-        {
-            _timerDuration = 0.35f;
-        }
+       
     }
     void Generate()
     {
@@ -44,8 +42,8 @@ public class ObjectCreator : MonoBehaviour
 
     Vector3 GetPositionToGenerate()
     {
-        Vector3 positionToGenerate = _objectGenerated.transform.GetChild(0).gameObject.transform.GetChild(0).transform.position;
-        Debug.Log(_objectGenerated.transform.GetChild(0).gameObject.transform.GetChild(0).name);
+        Vector3 positionToGenerate = _objectGenerated.transform.GetChild(0).transform.position;
+       
         return positionToGenerate;
     }
 
@@ -58,8 +56,8 @@ public class ObjectCreator : MonoBehaviour
         }
     }
 
-    private void IncreaseTimerDuration()
-    {
-        _timerDuration -= Time.deltaTime * _generationSpeedFactor;
-    }
+    // private void IncreaseTimerDuration()
+    // {
+    //     _timerDuration -= Time.deltaTime * _generationSpeedFactor;
+    // }
 }
