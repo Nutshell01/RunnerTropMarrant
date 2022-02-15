@@ -271,7 +271,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4b737e07bcc3e4d47988cb83f61fe333, type: 2}
+  - {fileID: 2100000, guid: fcc4db27a66ce924fa766ba85340b1de, type: 2}
   - {fileID: 2100000, guid: fcc4db27a66ce924fa766ba85340b1de, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -330,7 +330,7 @@ GameObject:
   - component: {fileID: 318247081265350551}
   - component: {fileID: 7538441673827977952}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Led-Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -643,7 +643,7 @@ GameObject:
   - component: {fileID: 9129389258363158770}
   - component: {fileID: 6171033948464676712}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Led-Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
