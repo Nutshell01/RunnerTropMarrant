@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] AnimationCurve _accelerationCurve;
     private GameObject[] _worldObject;
     private float _distance;
-    private int _collectibleNumber;
+    public int _collectibleNumber;
 
     #region Unity Methodes
     private void Start()
@@ -65,9 +65,9 @@ public class GameManager : MonoBehaviour
     {
         return _collectibleNumber;
     }
-    public void SetCollectibleNumber()
+    public void SetCollectibleNumber(int coinValue)
     {
-        _collectibleNumber ++;
+        _collectibleNumber += coinValue;
     }
 
 }
