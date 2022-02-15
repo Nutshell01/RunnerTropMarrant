@@ -6,9 +6,10 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] float _worldSpeed;
     [SerializeField] float _accelerationFactor;
+    [SerializeField] AnimationCurve _accelerationCurve;
     private GameObject[] _worldObject;
     private float _distance;
-    private int _collectibleNumber;
+    public int _collectibleNumber;
 
     #region Unity Methodes
     private void Start()
@@ -22,18 +23,15 @@ public class GameManager : MonoBehaviour
         foreach (GameObject worldObj in _worldObject)
         {
             if (worldObj != null)
-                worldObj.transform.position += -transform.forward * _worldSpeed * Time.deltaTime;
+                worldObj.transform.position += -transform.forward * _worldSpeed * Time.fixedDeltaTime;
         }
     }
     private void Update()
     {
         IncreaseScore();
-        Debug.Log(_distance);
-        IncreaseWorldSpeed();
-          if(_worldSpeed >= 28.3f)
-        {
-            _worldSpeed = 28.3f;
-        }
+        
+       _worldSpeed = _accelerationCurve.Evaluate(Time.time);
+      
     }
 
     #endregion
@@ -58,9 +56,18 @@ public class GameManager : MonoBehaviour
         _worldObject = GameObject.FindGameObjectsWithTag("Generated");
     }
 
-    void IncreaseWorldSpeed()
+    // void IncreaseWorldSpeed()
+    // {
+    //     _worldSpeed += _accelerationFactor * Time.deltaTime;
+    // }
+
+    public int GetCollectibleNumber()
     {
-        _worldSpeed += _accelerationFactor * Time.deltaTime;
+        return _collectibleNumber;
+    }
+    public void SetCollectibleNumber(int coinValue)
+    {
+        _collectibleNumber += coinValue;
     }
 
 }
