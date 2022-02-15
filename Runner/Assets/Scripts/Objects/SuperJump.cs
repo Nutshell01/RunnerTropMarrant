@@ -8,15 +8,19 @@ public class SuperJump : MonoBehaviour
 
     public float actionDuration = 1f;
 
+    public float SuperJumpDuration = 0f;
+    public Collider Collider;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.layer == 6)
         {
-            //Destroy(gameObject);
+            Collider.enabled = false;
 
-            if(actionDuration !>= 0)
+            if (actionDuration !>= 0)
             {
                 playermovements.jumpForce = 10f;
+                SuperJumpDuration = 15f;
             }
         }
     }
@@ -27,6 +31,17 @@ public class SuperJump : MonoBehaviour
         {
             actionDuration = actionDuration - 0.1f * Time.deltaTime;
         }
-        
+
+        if (SuperJumpDuration != 0)
+        {
+            SuperJumpDuration = SuperJumpDuration - 1f * Time.deltaTime;
+        }
+
+        if (SuperJumpDuration <= 0)
+        {
+            playermovements.jumpForce = 5f;
+        }
+
+
     }
 }
