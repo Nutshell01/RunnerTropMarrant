@@ -2008,10 +2008,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 2705617806515100577, guid: 0aa43908ac07a0d4d80757c23ca1cd3c, type: 3}
-      propertyPath: m_Name
-      value: Led-Left
-      objectReference: {fileID: 0}
     - target: {fileID: 2739788297756599509, guid: 0aa43908ac07a0d4d80757c23ca1cd3c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2055,10 +2051,6 @@ PrefabInstance:
     - target: {fileID: 2739788297756599509, guid: 0aa43908ac07a0d4d80757c23ca1cd3c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2984665144240693401, guid: 0aa43908ac07a0d4d80757c23ca1cd3c, type: 3}
-      propertyPath: m_Name
-      value: Led-Right
       objectReference: {fileID: 0}
     - target: {fileID: 3868216347885124600, guid: 0aa43908ac07a0d4d80757c23ca1cd3c, type: 3}
       propertyPath: m_Mesh

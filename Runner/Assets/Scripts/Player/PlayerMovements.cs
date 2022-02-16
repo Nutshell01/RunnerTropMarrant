@@ -25,28 +25,38 @@ public class PlayerMovements : MonoBehaviour
     public Collider normalCollider;
     public Collider slideCollider;
 
-     private void Start()
+    [Header("Audio")]
+
+    [SerializeField] AudioSource _jumpAS;
+    [SerializeField] AudioSource _slideAS;
+
+    private void Start()
      {
          rb = GetComponent<Rigidbody>();
      }
      private void Update()
      {
         Vector3 gravity = new Vector3(0, Gravity, 0);
-        rb.AddForce(gravity, ForceMode.Force);
+        
 
         if (actionTimeToRemain != 0)
         {
             actionTimeToRemain = actionTimeToRemain - 0.2f *Time.deltaTime;
         }
 
-        isGrounded = true;
-
         if(actionTimeToRemain <= 0)
         {
             Run();
         }
 
-    }
+        if(rb.velocity.y < 1f)
+        {
+            rb.AddForce(gravity, ForceMode.Force);
+        }
+
+        GroundCheck();
+
+     }
 
     public void Run()
     {
@@ -73,6 +83,10 @@ public class PlayerMovements : MonoBehaviour
             playerAnimations.OnJump();
             isGrounded = false;
             actionTimeToRemain = actionDuration;
+
+            _jumpAS.pitch = Random.Range(0.9f, 1.1f);
+            _jumpAS.Play();
+
         }
     }
 
@@ -132,5 +146,17 @@ public class PlayerMovements : MonoBehaviour
          _right = boolToSet;
      }*/
 
-    
+    RaycastHit hit;
+
+    private void GroundCheck()
+    {
+        if (Physics.Raycast(transform.position + new Vector3(0,0.3f,0), transform.TransformDirection(Vector3.down / 2), out hit, Mathf.Infinity, 11))
+        {
+            isGrounded = true;
+        }
+        else if (hit.collider == null)
+        {
+            isGrounded = false;
+        }
+    }
 }

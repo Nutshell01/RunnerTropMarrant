@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2200074807253138556}
   - component: {fileID: 4707640025439236602}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Triggers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 3889680236734295943}
   - component: {fileID: 3889680236734295960}
   - component: {fileID: 3889680236734295961}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Led-Right (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 3889680238139132625}
   - component: {fileID: 3889680238139132626}
   - component: {fileID: 3889680238139132627}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Led-Right (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -679,7 +679,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8835857556750832297}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Void_Jump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
