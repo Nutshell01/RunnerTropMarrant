@@ -49,7 +49,7 @@ public class PlayerMovements : MonoBehaviour
             Run();
         }
 
-        if(rb.velocity.y < 1f)
+        if(rb.velocity.y < 0)
         {
             rb.AddForce(gravity, ForceMode.Force);
         }
