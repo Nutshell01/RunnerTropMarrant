@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] float _worldSpeed;
     [SerializeField] float _accelerationFactor;
     [SerializeField] AnimationCurve _accelerationCurve;
+    [SerializeField] TextMeshProUGUI _coinText;
     private GameObject[] _worldObject;
     private float _distance;
-    public int _collectibleNumber;
+    private int _collectibleNumber;
 
     #region Unity Methodes
     private void Start()
@@ -29,7 +30,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         IncreaseScore();
-        
+        _coinText.text = _collectibleNumber.ToString();
        _worldSpeed = _accelerationCurve.Evaluate(Time.time);
       
     }
