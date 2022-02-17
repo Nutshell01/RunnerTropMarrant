@@ -16073,10 +16073,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1022097918, guid: b16dc83234d99f14f86f7e85f0a2bf02, type: 3}
+      propertyPath: m_ClearFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1460780521, guid: b16dc83234d99f14f86f7e85f0a2bf02, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 730777609}
+    - target: {fileID: 6943952125244555750, guid: b16dc83234d99f14f86f7e85f0a2bf02, type: 3}
+      propertyPath: Gravity
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943952125244555750, guid: b16dc83234d99f14f86f7e85f0a2bf02, type: 3}
+      propertyPath: jumpForce
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 6943952125244555750, guid: b16dc83234d99f14f86f7e85f0a2bf02, type: 3}
       propertyPath: transforms.Array.data[0]
       value: 
@@ -27253,6 +27265,10 @@ PrefabInstance:
     - target: {fileID: 6555991589812317435, guid: f61baad5e92cebf45b6596ed60e9f9ee, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555991590772374318, guid: f61baad5e92cebf45b6596ed60e9f9ee, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -10.594482
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f61baad5e92cebf45b6596ed60e9f9ee, type: 3}

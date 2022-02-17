@@ -369,7 +369,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _collectibleNumber: 0
+  _coinText: {fileID: 0}
 --- !u!4 &1029580305
 Transform:
   m_ObjectHideFlags: 0
@@ -590,7 +590,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1152659931}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.19, z: 0}
+  m_LocalPosition: {x: -3.02, y: 2.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -864,7 +864,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1966991717}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.2, z: 2.33}
+  m_LocalPosition: {x: -3.94, y: 2.2, z: 2.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1182,6 +1182,14 @@ PrefabInstance:
       propertyPath: transforms.Array.data[2]
       value: 
       objectReference: {fileID: 1311712730}
+    - target: {fileID: 6943952125244555771, guid: b16dc83234d99f14f86f7e85f0a2bf02, type: 3}
+      propertyPath: m_Height
+      value: 1.8954649
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943952125244555771, guid: b16dc83234d99f14f86f7e85f0a2bf02, type: 3}
+      propertyPath: m_Center.y
+      value: 0.8833978
+      objectReference: {fileID: 0}
     - target: {fileID: 6952795570747106362, guid: b16dc83234d99f14f86f7e85f0a2bf02, type: 3}
       propertyPath: m_Layer
       value: 6
