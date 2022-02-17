@@ -54,8 +54,6 @@ public class PlayerMovements : MonoBehaviour
             rb.AddForce(gravity, ForceMode.Force);
         }
 
-        GroundCheck();
-
      }
 
     public void Run()
@@ -81,7 +79,7 @@ public class PlayerMovements : MonoBehaviour
         {
             rb.AddForce(jumpforce, ForceMode.Impulse);
             playerAnimations.OnJump();
-            isGrounded = false;
+            //isGrounded = false;
             actionTimeToRemain = actionDuration;
 
             _jumpAS.pitch = Random.Range(0.9f, 1.1f);
@@ -92,14 +90,25 @@ public class PlayerMovements : MonoBehaviour
 
     public void Slide()
     {
-        if (actionTimeToRemain <= 0)
+        if (actionTimeToRemain <= 0 && isGrounded)
         {
             playerAnimations.OnSlide();
             slideCollider.enabled = true;
             normalCollider.enabled = false;
             actionTimeToRemain = actionDuration;
         }
+    }
 
+
+    public void GoDown()
+    {
+        Vector3 gravity = new Vector3(0, Gravity, 0);
+
+        if(isGrounded == false)
+        {
+            rb.AddForce(gravity * 10, ForceMode.Impulse);
+            Debug.Log("GoDown");
+        }
     }
 
     public void Left()
@@ -146,15 +155,19 @@ public class PlayerMovements : MonoBehaviour
          _right = boolToSet;
      }*/
 
-    RaycastHit hit;
-
-    private void GroundCheck()
+    private void OnCollisionStay(Collision collision)
     {
-        if (Physics.Raycast(transform.position + new Vector3(0,0.3f,0), transform.TransformDirection(Vector3.down / 2), out hit, Mathf.Infinity, 11))
+        Debug.Log(collision.gameObject.layer);
+
+        if (collision.gameObject.layer == 11)
         {
-            isGrounded = true;
+            isGrounded = true; 
         }
-        else if (hit.collider == null)
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.layer == 11)
         {
             isGrounded = false;
         }
