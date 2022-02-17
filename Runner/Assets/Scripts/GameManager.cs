@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] float _accelerationFactor;
     [SerializeField] AnimationCurve _accelerationCurve;
     [SerializeField] TextMeshProUGUI _coinText;
+    [SerializeField] TextMeshProUGUI _scoreText;
     private GameObject[] _worldObject;
     public bool _isDead = false;
     private float _distance;
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
+        Debug.Log(GetScore());
         IncreaseScore();
         _coinText.text = _collectibleNumber.ToString();
         if (_isDead == false)
@@ -37,8 +39,11 @@ public class GameManager : MonoBehaviour
             _worldSpeed = _accelerationCurve.Evaluate(Time.time);
         }
         else
+        {
             _worldSpeed = 0;
+        }
 
+        _scoreText.text = GetScore().ToString();
 
     }
 
@@ -53,7 +58,7 @@ public class GameManager : MonoBehaviour
     public int GetScore()
     {
         int finalScore;
-        finalScore = Mathf.RoundToInt(_distance) * (_collectibleNumber / 100);
+        finalScore = Mathf.RoundToInt(_distance * _collectibleNumber);
         return finalScore;
     }
 
