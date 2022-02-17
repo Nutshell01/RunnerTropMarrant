@@ -29,6 +29,7 @@ public class PlayerInputs : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S))
         {
             playerMovements.Slide();
+            playerMovements.GoDown();
         }
 
     }

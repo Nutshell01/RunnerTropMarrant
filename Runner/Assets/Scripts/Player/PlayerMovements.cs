@@ -25,28 +25,36 @@ public class PlayerMovements : MonoBehaviour
     public Collider normalCollider;
     public Collider slideCollider;
 
-     private void Start()
+    [Header("Audio")]
+
+    [SerializeField] AudioSource _jumpAS;
+    [SerializeField] AudioSource _slideAS;
+
+    private void Start()
      {
          rb = GetComponent<Rigidbody>();
      }
      private void Update()
      {
         Vector3 gravity = new Vector3(0, Gravity, 0);
-        rb.AddForce(gravity, ForceMode.Force);
+        
 
         if (actionTimeToRemain != 0)
         {
             actionTimeToRemain = actionTimeToRemain - 0.2f *Time.deltaTime;
         }
 
-        isGrounded = true;
-
         if(actionTimeToRemain <= 0)
         {
             Run();
         }
 
-    }
+        if(rb.velocity.y < 0)
+        {
+            rb.AddForce(gravity, ForceMode.Force);
+        }
+
+     }
 
     public void Run()
     {
@@ -71,21 +79,36 @@ public class PlayerMovements : MonoBehaviour
         {
             rb.AddForce(jumpforce, ForceMode.Impulse);
             playerAnimations.OnJump();
-            isGrounded = false;
+            //isGrounded = false;
             actionTimeToRemain = actionDuration;
+
+            _jumpAS.pitch = Random.Range(0.9f, 1.1f);
+            _jumpAS.Play();
+
         }
     }
 
     public void Slide()
     {
-        if (actionTimeToRemain <= 0)
+        if (actionTimeToRemain <= 0 && isGrounded)
         {
             playerAnimations.OnSlide();
             slideCollider.enabled = true;
             normalCollider.enabled = false;
             actionTimeToRemain = actionDuration;
         }
+    }
 
+
+    public void GoDown()
+    {
+        Vector3 gravity = new Vector3(0, Gravity, 0);
+
+        if(isGrounded == false)
+        {
+            rb.AddForce(gravity * 10, ForceMode.Impulse);
+            Debug.Log("GoDown");
+        }
     }
 
     public void Left()
@@ -132,5 +155,21 @@ public class PlayerMovements : MonoBehaviour
          _right = boolToSet;
      }*/
 
-    
+    private void OnCollisionStay(Collision collision)
+    {
+        Debug.Log(collision.gameObject.layer);
+
+        if (collision.gameObject.layer == 11)
+        {
+            isGrounded = true; 
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.layer == 11)
+        {
+            isGrounded = false;
+        }
+    }
 }
