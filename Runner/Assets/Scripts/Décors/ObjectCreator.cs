@@ -10,7 +10,7 @@ public class ObjectCreator : MonoBehaviour
     [SerializeField] float _timerDuration;
     [SerializeField] GameObject[] _prefabsToInstantiate;
     private float _generationCooldown;
-    [SerializeField] float _generationSpeedFactor;
+    
     
     
 
@@ -54,6 +54,11 @@ public class ObjectCreator : MonoBehaviour
             Generate();
             _generationCooldown = _timerDuration;
         }
+    }
+
+    public void EndTimer()
+    {
+        _timerDuration = Mathf.Infinity;
     }
 
     // private void IncreaseTimerDuration()
