@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class DoubleCoins : MonoBehaviour
 {
-    [SerializeField] private Collectible collectible;
-    
+    public Transform playerTransform;
+    Collectible collectible;
+
+    private void Start()
+    {
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        collectible = gameObject.GetComponent<Collectible>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == 6)

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Coin : MonoBehaviour
 {
     public Transform playerTransform;
-    public float moveSpeed = 17f;
+    public float moveSpeed = 15f;
 
     CoinMove coinMoveScript;
     Collider coinCollider;

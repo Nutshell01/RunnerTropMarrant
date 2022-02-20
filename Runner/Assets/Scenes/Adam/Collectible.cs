@@ -12,12 +12,12 @@ public class Collectible : MonoBehaviour
         _gameManager = GameObject.FindObjectOfType<GameManager>();
     }
 
-    /*private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.layer == 10)
         {
             _gameManager.SetCollectibleNumber(_coinValue);
             other.GetComponent<Animator>().SetTrigger("Collected");
         }
-    }*/
+    }
 }

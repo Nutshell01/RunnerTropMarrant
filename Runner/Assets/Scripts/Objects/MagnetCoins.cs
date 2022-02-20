@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class MagnetCoins : MonoBehaviour
 {
-    public GameObject coinDetectorObject;
+    GameObject coinDetectorObject;
 
     private void Start()
     {
         coinDetectorObject = GameObject.FindGameObjectWithTag("Coin Detector");
-        coinDetectorObject.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)

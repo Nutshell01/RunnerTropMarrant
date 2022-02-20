@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class SuperJump : MonoBehaviour
 {
-    [SerializeField] private PlayerMovements playermovements;
+    public Transform playerTransform;
+    PlayerMovements playerMovementsScript;
 
-
+    private void Start()
+    {
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        playerMovementsScript = gameObject.GetComponent<PlayerMovements>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.layer == 6)
@@ -18,9 +23,9 @@ public class SuperJump : MonoBehaviour
     IEnumerator Jump()
     {
         Destroy(transform.GetChild(0).gameObject);
-        playermovements.jumpForce = 10f;
+        playerMovementsScript.jumpForce = 20f;
         yield return new WaitForSeconds(30f);
-        playermovements.jumpForce = 8f;
+        playerMovementsScript.jumpForce = 8f;
     }
 
 }
