@@ -3034,6 +3034,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkyParticle
       objectReference: {fileID: 0}
+    - target: {fileID: 5423970029161223188, guid: 85bbc3599198fec48b89692a2c3a6973, type: 3}
+      propertyPath: prewarm
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5423970029161223191, guid: 85bbc3599198fec48b89692a2c3a6973, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -16656,6 +16660,27 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &1000197343 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6943952124448971499, guid: b16dc83234d99f14f86f7e85f0a2bf02, type: 3}
+  m_PrefabInstance: {fileID: 1039478288}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e613ed53d25e0c44897b64840877c41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &1000197349 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 6943952125244555768, guid: b16dc83234d99f14f86f7e85f0a2bf02, type: 3}
+  m_PrefabInstance: {fileID: 1039478288}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1001195001 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6943952124569528660, guid: b16dc83234d99f14f86f7e85f0a2bf02, type: 3}
+  m_PrefabInstance: {fileID: 1039478288}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1011183731
 Mesh:
   m_ObjectHideFlags: 0
@@ -16991,10 +17016,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 367780863, guid: b16dc83234d99f14f86f7e85f0a2bf02, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1460780521, guid: b16dc83234d99f14f86f7e85f0a2bf02, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 730777609}
+    - target: {fileID: 6943952124448971499, guid: b16dc83234d99f14f86f7e85f0a2bf02, type: 3}
+      propertyPath: _rb
+      value: 
+      objectReference: {fileID: 1000197349}
+    - target: {fileID: 6943952124448971499, guid: b16dc83234d99f14f86f7e85f0a2bf02, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 1001195001}
     - target: {fileID: 6943952124448971499, guid: b16dc83234d99f14f86f7e85f0a2bf02, type: 3}
       propertyPath: _GameOverUi
       value: 
@@ -17007,6 +17044,18 @@ PrefabInstance:
       propertyPath: _objectCreator
       value: 
       objectReference: {fileID: 730777608}
+    - target: {fileID: 6943952124448971499, guid: b16dc83234d99f14f86f7e85f0a2bf02, type: 3}
+      propertyPath: _playerDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1000197343}
+    - target: {fileID: 6943952124448971499, guid: b16dc83234d99f14f86f7e85f0a2bf02, type: 3}
+      propertyPath: _playerDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnDeath
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943952124448971499, guid: b16dc83234d99f14f86f7e85f0a2bf02, type: 3}
+      propertyPath: _playerDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerDeath, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 6943952125244555750, guid: b16dc83234d99f14f86f7e85f0a2bf02, type: 3}
       propertyPath: transforms.Array.data[0]
       value: 

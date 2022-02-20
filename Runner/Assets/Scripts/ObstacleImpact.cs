@@ -12,7 +12,7 @@ public class ObstacleImpact : MonoBehaviour
     {
         if (other.gameObject.layer == 6)
         {
-            _playerDeathParticles = other.GetComponentInChildren<ParticleSystem>();
+            //_playerDeathParticles = other.GetComponentInChildren<ParticleSystem>();
             _playerScript = other.GetComponent<PlayerDeath>();
             _playerScript._playerDeath.Invoke();
         }

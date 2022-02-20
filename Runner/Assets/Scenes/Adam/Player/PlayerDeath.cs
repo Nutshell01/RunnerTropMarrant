@@ -13,10 +13,12 @@ public class PlayerDeath : MonoBehaviour
     [SerializeField] ObjectCreator _objectCreator;
     [SerializeField] ParticleSystem _playerDeathParticles;
     [SerializeField] PlayerInputs _playerInputs;
+    [SerializeField] Rigidbody _rb;
 
     public void OnDeath()
     {
         _playerDeathParticles.Play();
+        _rb.isKinematic = true;
         _playerInputs.enabled = false;
         _gameManager._isDead = true;
         _GameOverUi.SetActive(true);
