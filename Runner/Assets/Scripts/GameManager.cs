@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         _worldObject = GameObject.FindGameObjectsWithTag("Generated");
+        _worldSpeed = 3;
     }
 
     private void FixedUpdate()
@@ -36,7 +37,7 @@ public class GameManager : MonoBehaviour
         _coinText.text = _collectibleNumber.ToString();
         if (_isDead == false)
         {
-            _worldSpeed = _accelerationCurve.Evaluate(Time.time);
+            _worldSpeed = _accelerationCurve.Evaluate(Time.timeSinceLevelLoad);
         }
         else
         {
