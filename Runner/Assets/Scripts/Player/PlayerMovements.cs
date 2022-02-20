@@ -8,11 +8,11 @@ public class PlayerMovements : MonoBehaviour
 
     public float Gravity;
 
-     public Transform[] transforms;
-     //private bool _right;
+    public Transform[] transforms;
+    //private bool _right;
 
-     public float jumpForce;
-     Rigidbody rb;
+    public float jumpForce;
+    Rigidbody rb;
 
     public float actionDuration = 0.15f;
     public float actionTimeToRemain = 0f;
@@ -31,30 +31,30 @@ public class PlayerMovements : MonoBehaviour
     [SerializeField] AudioSource _slideAS;
 
     private void Start()
-     {
-         rb = GetComponent<Rigidbody>();
-     }
-     private void Update()
-     {
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+    private void Update()
+    {
         Vector3 gravity = new Vector3(0, Gravity, 0);
-        
+
 
         if (actionTimeToRemain != 0)
         {
-            actionTimeToRemain = actionTimeToRemain - 0.2f *Time.deltaTime;
+            actionTimeToRemain = actionTimeToRemain - 0.2f * Time.deltaTime;
         }
 
-        if(actionTimeToRemain <= 0)
+        if (actionTimeToRemain <= 0)
         {
             Run();
         }
 
-        if(rb.velocity.y < 0)
+        if (rb.velocity.y < 0)
         {
             rb.AddForce(gravity, ForceMode.Force);
         }
 
-     }
+    }
 
     public void Run()
     {
@@ -72,10 +72,10 @@ public class PlayerMovements : MonoBehaviour
     }
 
     public void Jump()
-     {
-         Vector3 jumpforce = new Vector3(0, jumpForce, 0);
+    {
+        Vector3 jumpforce = new Vector3(0, jumpForce, 0);
 
-        if(actionTimeToRemain <= 0 && isGrounded ==true )
+        if (actionTimeToRemain <= 0 && isGrounded == true)
         {
             rb.AddForce(jumpforce, ForceMode.Impulse);
             playerAnimations.OnJump();
@@ -96,6 +96,8 @@ public class PlayerMovements : MonoBehaviour
             slideCollider.enabled = true;
             normalCollider.enabled = false;
             actionTimeToRemain = actionDuration;
+            _slideAS.pitch = Random.Range(0.9f, 1.05f);
+            _slideAS.Play();
         }
     }
 
@@ -104,7 +106,7 @@ public class PlayerMovements : MonoBehaviour
     {
         Vector3 gravity = new Vector3(0, Gravity, 0);
 
-        if(isGrounded == false)
+        if (isGrounded == false)
         {
             rb.AddForce(gravity * 10, ForceMode.Impulse);
             Debug.Log("GoDown");
@@ -113,7 +115,7 @@ public class PlayerMovements : MonoBehaviour
 
     public void Left()
     {
-        if(actionTimeToRemain <= 0  && moveToLeft())
+        if (actionTimeToRemain <= 0 && moveToLeft())
         {
             actionTimeToRemain = actionDuration;
         }
@@ -129,13 +131,14 @@ public class PlayerMovements : MonoBehaviour
 
     public bool moveToLeft()
     {
-        if(currentTransform == 0)
+        if (currentTransform == 0)
         {
             return false;
         }
         playerAnimations.OnLeft();
-
         currentTransform -= 1;
+        _jumpAS.pitch = Random.Range(0.8f, 1.2f);
+        _jumpAS.Play();
         return true;
     }
 
@@ -147,6 +150,8 @@ public class PlayerMovements : MonoBehaviour
         }
         playerAnimations.OnRight();
         currentTransform += 1;
+        _jumpAS.pitch = Random.Range(0.8f, 1.2f);
+        _jumpAS.Play();
         return true;
     }
 
@@ -161,7 +166,7 @@ public class PlayerMovements : MonoBehaviour
 
         if (collision.gameObject.layer == 11)
         {
-            isGrounded = true; 
+            isGrounded = true;
         }
     }
 
