@@ -14,10 +14,12 @@ public class PlayerDeath : MonoBehaviour
     [SerializeField] ParticleSystem _playerDeathParticles;
     [SerializeField] PlayerInputs _playerInputs;
     [SerializeField] Rigidbody _rb;
+    [SerializeField] AudioSource _deathsound;
 
     public void OnDeath()
     {
         _playerDeathParticles.Play();
+        _deathsound.Play();
         _rb.isKinematic = true;
         _playerInputs.enabled = false;
         _gameManager._isDead = true;
