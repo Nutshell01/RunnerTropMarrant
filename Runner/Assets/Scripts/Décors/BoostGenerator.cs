@@ -22,6 +22,7 @@ public class BoostGenerator : MonoBehaviour
         int RandomInt = Random.Range(0, _boosts.Length);
         GameObject _objectToGenerate = _boosts[RandomInt];
         GameObject objectGenerated = GameObject.Instantiate(_objectToGenerate, transform.position, Quaternion.identity);
+        objectGenerated.transform.parent = this.gameObject.transform;
 
     }
 }
