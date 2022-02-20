@@ -23,8 +23,8 @@ public class SuperJump : MonoBehaviour
     IEnumerator Jump()
     {
         Destroy(transform.GetChild(0).gameObject);
-        playerMovementsScript.jumpForce = 20f;
-        yield return new WaitForSeconds(30f);
+        playerMovementsScript.jumpForce = 10.5f;
+        yield return new WaitForSeconds(15f);
         playerMovementsScript.jumpForce = 8f;
     }
 

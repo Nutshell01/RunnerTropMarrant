@@ -25,7 +25,7 @@ public class DoubleCoins : MonoBehaviour
     {
         Destroy(transform.GetChild(0).gameObject);
         collectible._coinValue = 2;
-        yield return new WaitForSeconds(30f);
+        yield return new WaitForSeconds(15f);
         collectible._coinValue = 1;
     }
 

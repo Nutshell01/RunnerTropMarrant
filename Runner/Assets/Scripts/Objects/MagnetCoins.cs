@@ -26,7 +26,7 @@ public class MagnetCoins : MonoBehaviour
     {
         Destroy(transform.GetChild(0).gameObject);
         coinDetectorObject.gameObject.SetActive(true);
-        yield return new WaitForSeconds(30f);
+        yield return new WaitForSeconds(10f);
         coinDetectorObject.gameObject.SetActive(false);
     }
 
