@@ -10,7 +10,7 @@ public class SuperJump : MonoBehaviour
     private void Start()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        playerMovementsScript = gameObject.GetComponent<PlayerMovements>();
+        playerMovementsScript = playerTransform.GetComponent<PlayerMovements>();
     }
     private void OnTriggerEnter(Collider other)
     {

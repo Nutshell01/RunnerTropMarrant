@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class MagnetCoins : MonoBehaviour
 {
+    public Transform playerTransform;
     GameObject coinDetectorObject;
 
     private void Start()
     {
-        coinDetectorObject = GameObject.FindGameObjectWithTag("Coin Detector");
+        playerTransform = GameObject.FindObjectOfType<Collectible>().transform;
+        coinDetectorObject = playerTransform.GetChild(4).gameObject;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == 6)
         {
+            Debug.Log(coinDetectorObject);
             StartCoroutine(ActivateCoin());
         }
     }
@@ -22,9 +25,9 @@ public class MagnetCoins : MonoBehaviour
     IEnumerator ActivateCoin()
     {
         Destroy(transform.GetChild(0).gameObject);
-        coinDetectorObject.SetActive(true);
+        coinDetectorObject.gameObject.SetActive(true);
         yield return new WaitForSeconds(30f);
-        coinDetectorObject.SetActive(false);
+        coinDetectorObject.gameObject.SetActive(false);
     }
 
 

@@ -10,7 +10,7 @@ public class DoubleCoins : MonoBehaviour
     private void Start()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        collectible = gameObject.GetComponent<Collectible>();
+        collectible = playerTransform.GetComponent<Collectible>();
     }
 
     private void OnTriggerEnter(Collider other)

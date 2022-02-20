@@ -22,7 +22,6 @@ public class Coin : MonoBehaviour
     {
         if(other.gameObject.tag == "Coin Detector")
         {
-            coinCollider.isTrigger = false;
             coinMoveScript.enabled = true;
         }
     }
