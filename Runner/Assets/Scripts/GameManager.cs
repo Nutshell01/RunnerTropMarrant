@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(GetScore());
+        
         IncreaseScore();
         _coinText.text = _collectibleNumber.ToString();
         if (_isDead == false)
