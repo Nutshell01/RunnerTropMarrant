@@ -5,31 +5,22 @@ using UnityEngine;
 public class DoubleCoins : MonoBehaviour
 {
     [SerializeField] private Collectible collectible;
-    public Collider Collider;
-    public float DoubleCoinsDuration = 0f;
-
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == 6)
         {
-            Collider.enabled = false;
-            DoubleCoinsDuration = 15f;
-            collectible._coinValue = 2;
+            StartCoroutine(Jump());
         }
     }
 
-    private void Update()
+    IEnumerator Jump()
     {
-        if (DoubleCoinsDuration != 0)
-        {
-            DoubleCoinsDuration = DoubleCoinsDuration - 1f * Time.deltaTime;
-        }
-
-        if (DoubleCoinsDuration <= 0)
-        {
-            collectible._coinValue = 1;
-        }
-
-
+        Destroy(transform.GetChild(0).gameObject);
+        collectible._coinValue = 2;
+        yield return new WaitForSeconds(30f);
+        collectible._coinValue = 1;
     }
+
+
 }

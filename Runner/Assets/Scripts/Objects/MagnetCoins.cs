@@ -4,41 +4,29 @@ using UnityEngine;
 
 public class MagnetCoins : MonoBehaviour
 {
-    public float MagnetDuration = 0f;
-    public Collider Collider;
-    public bool attraction = false;
-    public Rigidbody playerRb;
+    public GameObject coinDetectorObject;
+
+    private void Start()
+    {
+        coinDetectorObject = GameObject.FindGameObjectWithTag("Coin Detector");
+        coinDetectorObject.SetActive(false);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == 6)
         {
-            Collider.enabled = false;
-            attraction = true;
-            MagnetDuration = 15f;
-
-            if(other.gameObject.layer == 10 )
-            {
-           
-            }
-
-            //if(Physics.SphereCast)
-            {
-
-            }
+            StartCoroutine(ActivateCoin());
         }
     }
 
-    private void Update()
+    IEnumerator ActivateCoin()
     {
-        if (MagnetDuration != 0)
-        {
-            MagnetDuration = MagnetDuration - 1f * Time.deltaTime;
-        }
-
-        if (MagnetDuration <= 0)
-        {
-            attraction = false;
-        }
+        Destroy(transform.GetChild(0).gameObject);
+        coinDetectorObject.SetActive(true);
+        yield return new WaitForSeconds(30f);
+        coinDetectorObject.SetActive(false);
     }
+
+
 }

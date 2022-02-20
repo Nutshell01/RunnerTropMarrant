@@ -6,32 +6,21 @@ public class SuperJump : MonoBehaviour
 {
     [SerializeField] private PlayerMovements playermovements;
 
-    public float SuperJumpDuration = 0f;
-    public Collider Collider;
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.layer == 6)
         {
-            Collider.enabled = false;
-
-                playermovements.jumpForce = 10f;
-                SuperJumpDuration = 15f;
+           StartCoroutine(Jump());
         }
     }
 
-    private void Update()
+    IEnumerator Jump()
     {
-        if (SuperJumpDuration != 0)
-        {
-            SuperJumpDuration = SuperJumpDuration - 1f * Time.deltaTime;
-        }
-
-        if (SuperJumpDuration <= 0)
-        {
-            playermovements.jumpForce = 5f;
-        }
-
-
+        Destroy(transform.GetChild(0).gameObject);
+        playermovements.jumpForce = 10f;
+        yield return new WaitForSeconds(30f);
+        playermovements.jumpForce = 8f;
     }
+
 }

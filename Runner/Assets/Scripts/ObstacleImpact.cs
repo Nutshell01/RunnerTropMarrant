@@ -14,7 +14,7 @@ public class ObstacleImpact : MonoBehaviour
         {
             _playerDeathParticles = other.GetComponentInChildren<ParticleSystem>();
             _playerScript = other.GetComponent<PlayerDeath>();
-            _playerScript._playerDeath.Invoke();
+           // _playerScript._playerDeath.Invoke();
         }
     }
 
