@@ -12484,7 +12484,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _coinText: {fileID: 780711420}
-  _scoreText: {fileID: 780711420}
+  _scoreText: {fileID: 1167821909}
   _isDead: 0
 --- !u!43 &732577352
 Mesh:
@@ -18918,6 +18918,17 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &1167821909 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7408585673554215588, guid: a8d00fa01eb5dc741a9ac2bd53d842b3, type: 3}
+  m_PrefabInstance: {fileID: 7408585673527768434}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &1173546520
 Mesh:
   m_ObjectHideFlags: 0
