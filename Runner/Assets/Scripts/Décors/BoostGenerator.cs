@@ -6,7 +6,7 @@ public class BoostGenerator : MonoBehaviour
 {
     [SerializeField] GameObject[] _boosts;
     private int randomTest;
-    [SerializeField] int _spawnCap;
+     int _spawnCap = 5;
     // Start is called before the first frame update
     void Start()
     {
